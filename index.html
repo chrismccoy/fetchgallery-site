@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Gallery // Import Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: [
+                "ui-monospace",
+                "SFMono-Regular",
+                "Menlo",
+                "Monaco",
+                "Consolas",
+                "Liberation Mono",
+                "Courier New",
+                "monospace",
+              ],
+            },
+            colors: {
+              "brutal-yellow": "#FDE047",
+            },
+            boxShadow: {
+              hard: "8px 8px 0px 0px #000000",
+              "hard-sm": "4px 4px 0px 0px #000000",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .marquee-content {
+        display: inline-block;
+        animation: marquee 20s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-black font-mono selection:bg-black selection:text-brutal-yellow"
+  >
+    <nav
+      class="sticky top-0 z-50 bg-white border-b-4 border-black transition-all duration-150"
+    >
+      <div
+        class="max-w-7xl mx-auto flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8"
+      >
+        <div class="flex items-center">
+          <h1 class="text-2xl font-bold uppercase text-black">
+            <a
+              href="#"
+              class="hover:bg-brutal-yellow px-2 py-1 transition-colors border-2 border-transparent hover:border-black"
+            >
+              <i class="fa-regular fa-images mr-2"></i>Fetch Gallery
+            </a>
+          </h1>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-2">
+          <a
+            href="#features"
+            class="px-3 py-2 text-black hover:bg-brutal-yellow transition-colors font-bold uppercase border-2 border-transparent hover:border-black"
+            >[FEATURES]</a
+          >
+          <a
+            href="#how-it-works"
+            class="px-3 py-2 text-black hover:bg-brutal-yellow transition-colors font-bold uppercase border-2 border-transparent hover:border-black"
+            >[WORKFLOW]</a
+          >
+          <a
+            href="#developers"
+            class="px-3 py-2 text-black hover:bg-brutal-yellow transition-colors font-bold uppercase border-2 border-transparent hover:border-black"
+            >[DEVS]</a
+          >
+          <a
+            href="#download"
+            class="ml-4 px-4 py-2 bg-black text-brutal-yellow border-2 border-black hover:bg-brutal-yellow hover:text-black transition-colors font-bold uppercase hover:shadow-hard-sm"
+            >DOWNLOAD FREE</a
+          >
+        </div>
+
+        <button
+          class="md:hidden border-2 border-black px-3 py-1 hover:bg-brutal-yellow font-bold uppercase"
+        >
+          [MENU]
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="max-w-7xl mx-auto px-4 py-16 border-b-4 border-black">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-block bg-brutal-yellow border-2 border-black px-3 py-1 mb-6 text-sm font-bold uppercase shadow-hard-sm"
+            >
+              WordPress Plugin v3.0.0
+            </div>
+
+            <div
+              class="border-2 border-black p-6 bg-neutral-50 mb-8 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard"
+            >
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-tight mb-6"
+              >
+                Import Entire
+                <span class="bg-black text-white px-2">Galleries</span> From Any
+                Webpage
+              </h1>
+              <p class="text-lg font-bold text-neutral-600">
+                Stop manually downloading and uploading images one by one. Just
+                paste a URL and let Fetch Gallery do the heavy lifting.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-8">
+              <a
+                href="#download"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-brutal-yellow text-black font-bold border-2 border-black uppercase transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard"
+              >
+                Download For Free &rarr;
+              </a>
+              <a
+                href="#how-it-works"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold border-2 border-black uppercase transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard"
+              >
+                See How It Works
+              </a>
+            </div>
+
+            <div class="flex flex-wrap gap-2 text-xs font-bold uppercase">
+              <span class="border border-black px-2 py-1 bg-white"
+                >[Gutenberg Ready]</span
+              >
+              <span class="border border-black px-2 py-1 bg-white"
+                >[Classic Editor]</span
+              >
+              <span class="border border-black px-2 py-1 bg-white"
+                >[25+ Hooks]</span
+              >
+            </div>
+          </div>
+
+          <div class="relative pl-4 pt-4">
+            <div
+              class="absolute top-0 right-0 bg-brutal-yellow border-2 border-black px-3 py-1 font-bold uppercase z-20 shadow-hard-sm rotate-3"
+            >
+              One Click!
+            </div>
+            <div
+              class="absolute bottom-0 left-0 bg-black text-white border-2 border-black px-3 py-1 font-bold uppercase z-20 shadow-hard-sm -rotate-2"
+            >
+              Auto Gallery!
+            </div>
+
+            <div
+              class="bg-white border-2 border-black p-4 relative z-10 shadow-hard"
+            >
+              <div
+                class="bg-neutral-100 border-2 border-black p-2 mb-4 flex items-center gap-2"
+              >
+                <div class="w-3 h-3 bg-black border border-black"></div>
+                <div class="w-3 h-3 bg-white border border-black"></div>
+                <div
+                  class="flex-1 bg-white border-2 border-black px-2 py-1 text-xs truncate font-bold"
+                >
+                  https://example.com/vacation-photos
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2">
+                <div
+                  class="aspect-square bg-neutral-50 border-2 border-black flex items-center justify-center text-2xl hover:bg-brutal-yellow transition-colors"
+                >
+                  🏖️
+                </div>
+                <div
+                  class="aspect-square bg-neutral-50 border-2 border-black flex items-center justify-center text-2xl hover:bg-brutal-yellow transition-colors"
+                >
+                  🌅
+                </div>
+                <div
+                  class="aspect-square bg-neutral-50 border-2 border-black flex items-center justify-center text-2xl hover:bg-brutal-yellow transition-colors"
+                >
+                  🏔️
+                </div>
+                <div
+                  class="aspect-square bg-neutral-50 border-2 border-black flex items-center justify-center text-2xl hover:bg-brutal-yellow transition-colors"
+                >
+                  🌺
+                </div>
+                <div
+                  class="aspect-square bg-neutral-50 border-2 border-black flex items-center justify-center text-2xl hover:bg-brutal-yellow transition-colors"
+                >
+                  🦜
+                </div>
+                <div
+                  class="aspect-square bg-neutral-50 border-2 border-black flex items-center justify-center text-2xl hover:bg-brutal-yellow transition-colors"
+                >
+                  🌊
+                </div>
+              </div>
+              <div
+                class="mt-4 bg-black text-white p-2 text-center text-sm font-bold uppercase border-2 border-black"
+              >
+                // 6 Images Imported Successfully
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bg-black text-brutal-yellow py-4 border-b-4 border-black overflow-hidden font-bold text-lg uppercase"
+      >
+        <div class="marquee-container">
+          <div class="marquee-content">
+            <span class="px-8">[JPG]</span>
+            <span class="px-8">[JPEG]</span>
+            <span class="px-8">[PNG]</span>
+            <span class="px-8">[GIF]</span>
+            <span class="px-8">[WEBP]</span>
+            <span class="px-8">[GUTENBERG]</span>
+            <span class="px-8">[CLASSIC EDITOR]</span>
+            <span class="px-8">[OPEN SOURCE]</span>
+            <span class="px-8">[JPG]</span>
+            <span class="px-8">[JPEG]</span>
+            <span class="px-8">[PNG]</span>
+            <span class="px-8">[GIF]</span>
+            <span class="px-8">[WEBP]</span>
+          </div>
+        </div>
+      </div>
+
+      <section
+        id="features"
+        class="max-w-7xl mx-auto px-4 py-16 border-b-4 border-black"
+      >
+        <div class="text-center mb-16">
+          <span
+            class="bg-white border-2 border-black px-3 py-1 text-sm font-bold uppercase mb-4 inline-block shadow-hard-sm"
+            >Packed with Features</span
+          >
+          <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-4">
+            Everything You Need
+          </h2>
+          <p class="text-xl text-neutral-600 max-w-2xl mx-auto font-bold">
+            A powerful yet simple tool designed for both beginners and
+            developers.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              🔗
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              URL Scraping
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Enter any webpage URL and automatically discover all images. Works
+              with photo galleries, portfolio sites, and image-heavy blog posts.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              🖼️
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Visual Preview Grid
+            </h3>
+            <p class="text-sm leading-relaxed">
+              See thumbnails of all discovered images before importing. Preview
+              helps you choose exactly what you need.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              ☑️
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Selective Import
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Choose exactly which images to import with checkbox selection. No
+              more importing everything and deleting what you don't want.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              ✨
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Select All Toggle
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Quickly select or deselect all images with one click. Perfect for
+              large galleries where you want most—but not all—images.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              📊
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Live Progress Tracking
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Watch real-time status updates as each image imports. Know exactly
+              what's happening with pending, importing, done, and failed states.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              🔄
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Automatic Retry
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Failed imports automatically retry up to 3 times. Network hiccups
+              won't ruin your import session.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              🎨
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Gallery Auto-Creation
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Automatically generates a gallery shortcode (Classic) or native
+              Gallery block (Gutenberg) after import. Zero extra steps required.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              📝
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Alt Text Preservation
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Extracts and saves alt text from source images automatically.
+              Great for accessibility and SEO without extra work.
+            </p>
+          </article>
+
+          <article
+            class="bg-white border-2 border-black p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard group h-full"
+          >
+            <div
+              class="text-4xl mb-4 group-hover:scale-110 transition-transform w-fit"
+            >
+              📁
+            </div>
+            <h3
+              class="text-xl font-bold uppercase mb-3 group-hover:bg-brutal-yellow inline-block px-1"
+            >
+              Organized Uploads
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Images stored in post-specific subdirectories. Keep your Media
+              Library organized without manual folder management.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="border-2 border-black p-8 bg-neutral-50 shadow-hard-sm">
+            <h3
+              class="text-xl font-bold uppercase bg-black text-white p-4 mb-6 inline-block"
+            >
+              // Security & Performance
+            </h3>
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start gap-3">
+                <span class="text-lg">⚡</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Result Caching]</span
+                  >
+                  <p class="mt-1">
+                    Scraped results cached to avoid redundant requests.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-lg">🛡️</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Rate Limiting]</span
+                  >
+                  <p class="mt-1">Built-in protection against request abuse.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-lg">✅</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Verification]</span
+                  >
+                  <p class="mt-1">
+                    Validates files are actual images before importing.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-lg">🔒</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Metadata]</span
+                  >
+                  <p class="mt-1">
+                    Stores original image URL as attachment metadata.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-2 border-black p-8 bg-neutral-50 shadow-hard-sm">
+            <h3
+              class="text-xl font-bold uppercase bg-black text-white p-4 mb-6 inline-block"
+            >
+              // Universal Compatibility
+            </h3>
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start gap-3">
+                <span class="text-lg">🧩</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Gutenberg]</span
+                  >
+                  <p class="mt-1">
+                    Native block editor support with gallery conversion.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-lg">📰</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Classic Editor]</span
+                  >
+                  <p class="mt-1">
+                    Full support for the classic editing experience.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-lg">🖼️</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Formats]</span
+                  >
+                  <p class="mt-1">JPG, JPEG, PNG, GIF, and WebP support.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-lg">📱</span>
+                <div>
+                  <span
+                    class="font-bold bg-brutal-yellow px-1 border border-black"
+                    >[Responsive]</span
+                  >
+                  <p class="mt-1">Works beautifully on all screen sizes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="how-it-works"
+        class="py-16 bg-brutal-yellow border-b-4 border-black"
+      >
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-16">
+            <span
+              class="bg-white border-2 border-black px-3 py-1 text-sm font-bold uppercase mb-4 inline-block shadow-hard-sm"
+              >Dead Simple</span
+            >
+            <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-4">
+              How It Works
+            </h2>
+            <p class="text-xl font-bold text-black max-w-2xl mx-auto">
+              Import images in three easy steps. No technical knowledge
+              required.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div
+              class="bg-white border-2 border-black p-8 shadow-hard hover:-translate-y-1 transition-transform h-full"
+            >
+              <div
+                class="w-16 h-16 bg-black text-white border-2 border-black flex items-center justify-center text-3xl font-extrabold mb-6"
+              >
+                01
+              </div>
+              <h3 class="font-bold text-2xl mb-4 uppercase">Paste URL</h3>
+              <p class="text-sm mb-4">
+                Find a webpage with images you want. Copy the URL and paste it
+                into Fetch Gallery.
+              </p>
+              <div
+                class="bg-neutral-100 border-2 border-black p-2 font-bold text-xs truncate"
+              >
+                https://example.com/gallery
+              </div>
+            </div>
+
+            <div
+              class="bg-white border-2 border-black p-8 shadow-hard hover:-translate-y-1 transition-transform h-full"
+            >
+              <div
+                class="w-16 h-16 bg-black text-white border-2 border-black flex items-center justify-center text-3xl font-extrabold mb-6"
+              >
+                02
+              </div>
+              <h3 class="font-bold text-2xl mb-4 uppercase">Select Images</h3>
+              <p class="text-sm mb-4">
+                Preview all discovered images in a visual grid. Click to select
+                or deselect.
+              </p>
+              <div class="grid grid-cols-4 gap-2">
+                <div
+                  class="aspect-square bg-brutal-yellow border-2 border-black flex items-center justify-center text-xs font-bold"
+                >
+                  ✓
+                </div>
+                <div
+                  class="aspect-square bg-brutal-yellow border-2 border-black flex items-center justify-center text-xs font-bold"
+                >
+                  ✓
+                </div>
+                <div
+                  class="aspect-square bg-neutral-200 border-2 border-black"
+                ></div>
+                <div
+                  class="aspect-square bg-brutal-yellow border-2 border-black flex items-center justify-center text-xs font-bold"
+                >
+                  ✓
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border-2 border-black p-8 shadow-hard hover:-translate-y-1 transition-transform h-full"
+            >
+              <div
+                class="w-16 h-16 bg-black text-white border-2 border-black flex items-center justify-center text-3xl font-extrabold mb-6"
+              >
+                03
+              </div>
+              <h3 class="font-bold text-2xl mb-4 uppercase">Import & Done!</h3>
+              <p class="text-sm mb-4">
+                Click import and watch the progress. A gallery is automatically
+                created.
+              </p>
+              <div
+                class="bg-brutal-yellow border-2 border-black p-2 font-bold text-xs text-center"
+              >
+                ✓ Gallery Created!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 py-16 border-b-4 border-black">
+        <div class="text-center mb-16">
+          <span
+            class="bg-black text-white px-3 py-1 text-sm font-bold uppercase mb-4 inline-block"
+            >Works Everywhere</span
+          >
+          <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-4">
+            Your Editor, Your Way
+          </h2>
+          <p class="text-xl font-bold text-neutral-600 max-w-2xl mx-auto">
+            Whether you prefer the modern Block Editor or the Classic Editor,
+            Fetch Gallery has you covered.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-black p-8 shadow-hard hover:-translate-y-1 transition-transform"
+          >
+            <div
+              class="flex items-center gap-4 mb-6 border-b-4 border-black pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-brutal-yellow border-2 border-black flex items-center justify-center text-3xl"
+              >
+                🧩
+              </div>
+              <div>
+                <h3 class="font-extrabold text-2xl uppercase">Block Editor</h3>
+                <span
+                  class="text-sm font-bold bg-neutral-200 px-1 border border-black"
+                  >(Gutenberg)</span
+                >
+              </div>
+            </div>
+            <div class="bg-neutral-50 border-2 border-black p-4 mb-6">
+              <div class="text-xs font-bold text-neutral-500 mb-2 uppercase">
+                [Block Inserter]
+              </div>
+              <div
+                class="flex items-center gap-3 p-2 bg-white border-2 border-black"
+              >
+                <span class="text-xl">🖼️</span>
+                <span class="font-bold">Fetch Gallery</span>
+              </div>
+            </div>
+            <ul class="space-y-3 font-bold text-sm">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Native block
+                experience
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Transforms to
+                Gallery block
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Searchable in
+                inserter
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Error boundaries
+                for stability
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-8 shadow-hard hover:-translate-y-1 transition-transform"
+          >
+            <div
+              class="flex items-center gap-4 mb-6 border-b-4 border-black pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-neutral-800 text-white border-2 border-black flex items-center justify-center text-3xl"
+              >
+                📰
+              </div>
+              <div>
+                <h3 class="font-extrabold text-2xl uppercase">
+                  Classic Editor
+                </h3>
+                <span
+                  class="text-sm font-bold bg-neutral-200 px-1 border border-black"
+                  >(TinyMCE)</span
+                >
+              </div>
+            </div>
+            <div class="bg-neutral-50 border-2 border-black p-4 mb-6">
+              <div class="text-xs font-bold text-neutral-500 mb-2 uppercase">
+                [Metabox]
+              </div>
+              <div class="p-2 bg-white border-2 border-black flex gap-2">
+                <div
+                  class="flex-1 bg-neutral-100 border border-black h-6"
+                ></div>
+                <div
+                  class="bg-brutal-yellow border border-black px-2 text-xs font-bold flex items-center"
+                >
+                  FETCH
+                </div>
+              </div>
+            </div>
+            <ul class="space-y-3 font-bold text-sm">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Familiar metabox
+                interface
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Auto-inserts
+                gallery shortcode
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Works with visual &
+                text mode
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-black"></i> Same features as
+                Block Editor
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="developers"
+        class="bg-black text-white py-16 border-b-4 border-black"
+      >
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-16">
+            <span
+              class="bg-brutal-yellow text-black px-3 py-1 text-sm font-bold uppercase mb-4 inline-block border-2 border-white"
+              >For Developers</span
+            >
+            <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-4">
+              Built for Extensibility
+            </h2>
+            <p class="text-xl text-neutral-400 max-w-2xl mx-auto font-bold">
+              Clean architecture, 25+ hooks, and comprehensive documentation.
+              Customize everything.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-neutral-900 border-2 border-white p-6">
+              <div class="text-3xl mb-3 text-brutal-yellow">🎯</div>
+              <h3 class="font-bold text-lg mb-2 uppercase text-brutal-yellow">
+                25+ Hooks
+              </h3>
+              <p class="text-neutral-400 text-sm">
+                Comprehensive filter and action hooks for every part of the
+                workflow.
+              </p>
+            </div>
+            <div class="bg-neutral-900 border-2 border-white p-6">
+              <div class="text-3xl mb-3 text-brutal-yellow">📋</div>
+              <h3 class="font-bold text-lg mb-2 uppercase text-brutal-yellow">
+                Logging
+              </h3>
+              <p class="text-neutral-400 text-sm">
+                Debug-friendly logging with multiple levels. Perfect for
+                troubleshooting.
+              </p>
+            </div>
+            <div class="bg-neutral-900 border-2 border-white p-6">
+              <div class="text-3xl mb-3 text-brutal-yellow">🔧</div>
+              <h3 class="font-bold text-lg mb-2 uppercase text-brutal-yellow">
+                Configurable
+              </h3>
+              <p class="text-neutral-400 text-sm">
+                Extensions, upload paths, filename patterns—all configurable via
+                filters.
+              </p>
+            </div>
+            <div class="bg-neutral-900 border-2 border-white p-6">
+              <div class="text-3xl mb-3 text-brutal-yellow">🏗️</div>
+              <h3 class="font-bold text-lg mb-2 uppercase text-brutal-yellow">
+                Architecture
+              </h3>
+              <p class="text-neutral-400 text-sm">
+                Dependency injection, interfaces, and service containers.
+                Testable code.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8">
+            <div
+              class="bg-neutral-800 border-2 border-white p-6 shadow-[8px_8px_0px_#FFFFFF]"
+            >
+              <div
+                class="flex items-center gap-2 mb-4 border-b border-white pb-2"
+              >
+                <span class="text-xs font-bold uppercase text-brutal-yellow"
+                  >[Custom Post Types]</span
+                >
+              </div>
+              <pre
+                class="text-sm text-neutral-300 overflow-x-auto font-mono"
+              ><code>add_filter(
+  'fetch_gallery_supported_post_types',
+  function ( $post_types ) {
+    $post_types[] = 'product';
+    $post_types[] = 'portfolio';
+    return $post_types;
+  }
+);</code></pre>
+            </div>
+
+            <div
+              class="bg-neutral-800 border-2 border-white p-6 shadow-[8px_8px_0px_#FFFFFF]"
+            >
+              <div
+                class="flex items-center gap-2 mb-4 border-b border-white pb-2"
+              >
+                <span class="text-xs font-bold uppercase text-brutal-yellow"
+                  >[Custom Upload Folder]</span
+                >
+              </div>
+              <pre
+                class="text-sm text-neutral-300 overflow-x-auto font-mono"
+              ><code>add_filter(
+  'fetch_gallery_upload_folder',
+  function ( $folder, $post ) {
+    return 'galleries/' . $folder;
+  },
+  10, 2
+);</code></pre>
+            </div>
+
+            <div
+              class="bg-neutral-800 border-2 border-white p-6 shadow-[8px_8px_0px_#FFFFFF]"
+            >
+              <div
+                class="flex items-center gap-2 mb-4 border-b border-white pb-2"
+              >
+                <span class="text-xs font-bold uppercase text-brutal-yellow"
+                  >[Add Extensions]</span
+                >
+              </div>
+              <pre
+                class="text-sm text-neutral-300 overflow-x-auto font-mono"
+              ><code>add_filter(
+  'fetch_gallery_supported_extensions',
+  function ( $extensions ) {
+    $extensions[] = 'avif';
+    $extensions[] = 'svg';
+    return $extensions;
+  }
+);</code></pre>
+            </div>
+
+            <div
+              class="bg-neutral-800 border-2 border-white p-6 shadow-[8px_8px_0px_#FFFFFF]"
+            >
+              <div
+                class="flex items-center gap-2 mb-4 border-b border-white pb-2"
+              >
+                <span class="text-xs font-bold uppercase text-brutal-yellow"
+                  >[After Import]</span
+                >
+              </div>
+              <pre
+                class="text-sm text-neutral-300 overflow-x-auto font-mono"
+              ><code>add_action(
+  'fetch_gallery_after_import',
+  function ( $result, $url, $id ) {
+    if ( $result->success ) {
+      update_post_meta($result->id, '_meta', 'val');
+    }
+  },
+  10, 3
+);</code></pre>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a
+              href="https://github.com/chrismccoy/fetch-gallery/blob/main/docs/hooks.md"
+              class="inline-block bg-white text-black font-bold px-8 py-4 border-2 border-black uppercase hover:bg-brutal-yellow transition-colors"
+            >
+              View Full Hooks Documentation &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 py-16 border-b-4 border-black">
+        <div class="text-center mb-16">
+          <span
+            class="bg-brutal-yellow border-2 border-black px-3 py-1 text-sm font-bold uppercase mb-4 inline-block shadow-hard-sm"
+            >And More...</span
+          >
+          <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-4">
+            Small Details, Big Difference
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">🌐</span>
+            <h4 class="font-bold uppercase mb-1">Translation Ready</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Full i18n support for any language.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">♿</span>
+            <h4 class="font-bold uppercase mb-1">Accessible</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Keyboard navigable with ARIA attributes.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">🎭</span>
+            <h4 class="font-bold uppercase mb-1">Error Boundaries</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Graceful handling won't crash your editor.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">🏷️</span>
+            <h4 class="font-bold uppercase mb-1">Flexible Naming</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Configure filename patterns via filters.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">📂</span>
+            <h4 class="font-bold uppercase mb-1">Custom Paths</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Control where images are stored.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">⏱️</span>
+            <h4 class="font-bold uppercase mb-1">Timeout Control</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Configurable HTTP and download timeouts.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">🔍</span>
+            <h4 class="font-bold uppercase mb-1">URL Validation</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Uses wp_safe_remote_get for security.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-black p-5 hover:bg-brutal-yellow transition-colors hover:shadow-hard-sm"
+          >
+            <span class="text-2xl mb-2 block">📜</span>
+            <h4 class="font-bold uppercase mb-1">GPL Licensed</h4>
+            <p class="text-xs font-bold text-neutral-600">
+              Free and open source forever.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-extrabold uppercase mb-8">Requirements</h2>
+          <div class="grid sm:grid-cols-3 gap-6">
+            <div
+              class="bg-brutal-yellow border-4 border-black p-6 shadow-hard text-center"
+            >
+              <div class="text-4xl mb-3">🐘</div>
+              <h4 class="font-bold uppercase text-lg mb-1">PHP</h4>
+              <p
+                class="font-bold text-2xl bg-white border border-black inline-block px-2"
+              >
+                8.0+
+              </p>
+            </div>
+            <div
+              class="bg-neutral-100 border-4 border-black p-6 shadow-hard text-center"
+            >
+              <div class="text-4xl mb-3">📦</div>
+              <h4 class="font-bold uppercase text-lg mb-1">WordPress</h4>
+              <p
+                class="font-bold text-2xl bg-white border border-black inline-block px-2"
+              >
+                5.9+
+              </p>
+            </div>
+            <div
+              class="bg-brutal-yellow border-4 border-black p-6 shadow-hard text-center"
+            >
+              <div class="text-4xl mb-3">💰</div>
+              <h4 class="font-bold uppercase text-lg mb-1">Price</h4>
+              <p
+                class="font-bold text-2xl bg-white border border-black inline-block px-2"
+              >
+                Free!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="download"
+        class="py-16 bg-neutral-100 border-t-4 border-black"
+      >
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <div class="bg-white border-4 border-black p-8 md:p-12 shadow-hard">
+            <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-6">
+              Ready to Import?
+            </h2>
+            <p class="text-lg font-bold text-black mb-8 max-w-2xl mx-auto">
+              Download Fetch Gallery now and start importing image galleries
+              with a single URL. It's free, open source, and always will be.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+              <a
+                href="https://github.com/chrismccoy/fetch-gallery/releases"
+                class="bg-black text-brutal-yellow font-bold px-8 py-4 border-2 border-black uppercase transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard hover:bg-brutal-yellow hover:text-black flex items-center gap-2"
+              >
+                <i class="fa-brands fa-github text-xl"></i>
+                Download from GitHub
+              </a>
+              <a
+                href="https://github.com/chrismccoy/fetch-gallery"
+                class="bg-white font-bold px-8 py-4 border-2 border-black uppercase transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-hard hover:bg-neutral-100"
+              >
+                View Source Code
+              </a>
+            </div>
+
+            <div
+              class="flex flex-wrap justify-center gap-6 text-xs font-bold text-neutral-500 uppercase"
+            >
+              <span>[✓ No signup required]</span>
+              <span>[✓ No tracking]</span>
+              <span>[✓ No ads]</span>
+              <span>[✓ GPL v2 licensed]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-12 border-t-4 border-black text-center bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8 text-left">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-4">
+              <h1 class="text-2xl font-bold uppercase">Fetch Gallery</h1>
+            </div>
+            <p class="text-sm font-bold text-neutral-600">
+              A free, open-source WordPress plugin for importing image galleries
+              from any webpage. Built with modern architecture and developer
+              experience in mind.
+            </p>
+          </div>
+          <div>
+            <h4
+              class="font-bold uppercase mb-4 bg-brutal-yellow inline-block px-1 border border-black"
+            >
+              Documentation
+            </h4>
+            <ul class="space-y-2 text-sm font-bold">
+              <li>
+                <a href="#" class="hover:bg-brutal-yellow px-1"
+                  >Installation Guide</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:bg-brutal-yellow px-1">Usage Guide</a>
+              </li>
+              <li>
+                <a href="#" class="hover:bg-brutal-yellow px-1"
+                  >Hooks Reference</a
+                >
+              </li>
+              <li><a href="#" class="hover:bg-brutal-yellow px-1">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-bold uppercase mb-4 bg-brutal-yellow inline-block px-1 border border-black"
+            >
+              Links
+            </h4>
+            <ul class="space-y-2 text-sm font-bold">
+              <li>
+                <a href="#" class="hover:bg-brutal-yellow px-1">GitHub</a>
+              </li>
+              <li>
+                <a href="#" class="hover:bg-brutal-yellow px-1"
+                  >Report Issues</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:bg-brutal-yellow px-1">Author</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t-2 border-black pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-sm font-bold uppercase">
+            &copy; 2026 Chris McCoy. Released under GPL v2.
+          </p>
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-bold uppercase">Made with</span>
+            <span
+              class="bg-brutal-yellow border border-black px-2 py-1 text-xs font-bold uppercase shadow-hard-sm"
+            >
+              ❤️ + ☕
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="scrollToTopBtn"
+      aria-label="Scroll to Top"
+      class="fixed bottom-[30px] right-[30px] z-[9999] flex h-[60px] w-[60px] items-center justify-center border-4 border-black bg-brutal-yellow text-black shadow-hard-sm cursor-pointer opacity-0 pointer-events-none translate-y-[20px] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-hard [&.show]:opacity-100 [&.show]:pointer-events-auto [&.show]:translate-y-0"
+    >
+      <i class="fa-solid fa-arrow-up text-2xl font-bold"></i>
+    </button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.getElementById("scrollToTopBtn");
+
+        function handleScroll() {
+          if ((window.scrollY || document.documentElement.scrollTop) > 100) {
+            scrollBtn.classList.add("show");
+          } else {
+            scrollBtn.classList.remove("show");
+          }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        scrollBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
